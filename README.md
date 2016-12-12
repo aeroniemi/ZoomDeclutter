@@ -3,7 +3,7 @@ A EuroScope 3.2 zoom declutter plugin.
 
 ## What does it do?
 
-Based on the current zoom level in EuroScope, it can display or hide sectors elements. The settings for the zoom are saved in the ASR, allowing you to have multiple configurations.
+Based on the current zoom level in EuroScope, it can display or hide sectors elements. The settings for the zoom are saved in the ASR, allowing you to have multiple configurations. This clears up a radar screen, making it easier to read, whilst also keeping all the vital information avaiable when the controller needs it.
 
 Example: Working on LFFF_CTR, an aircraft needs to intercept the LFPG ILS 09L, so you'd zoom in on LFPG, and the centerlines would appear, then just unzoom and back to the en-route view.
 
@@ -16,13 +16,16 @@ Zoom in to the first level you want elements to be displayed, then type in chat
 .zs
 ```
 
+(The first level is the most zoomed out you want to see the elements)
+
 It will give you in chat the current zoom level.
 
 You'll then need to open your ASR file, and add the bottom of the a line like this:
 
 ```
-PLUGIN:Zoom Declutter PlugIn:ZOOM1:FIX:RANUX:20
+PLUGIN:Zoom Declutter PlugIn:ZOOM1:FIX:DEGET:20
 PLUGIN:Zoom Declutter PlugIn:ZOOM2:GEO:LFPB VPT 07:20
+PLUGIN:Zoom Declutter PlugIn:ZOOM3:FREETEXT:LROP/TODA - 3500m:20
 ```
 
 The format is as follows:
@@ -57,4 +60,4 @@ TYPE: It is the type of the element you want to have displayed, here are all ele
 
 NAME: The name of the item to display
 
-LEVEL: The zoom level
+LEVEL: The highest zoom level that you want the element visible at
